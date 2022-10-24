@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List<Element> elements = readElementFromCSV("/Users/rohansuri/Downloads/periodicdata.csv");
+        List<Element> elements = CSVReader.readElement("/Users/rohansuri/Downloads/periodicdata.csv");
         System.out.println("What do you need help with?\n\t1: Information about an element\n\t2: Molar Mass Calculation ");
         String ans = sc.nextLine();
         boolean keepGoing = true;
@@ -24,6 +24,7 @@ public class Main {
                 else {
                     System.out.println(Element.findBySymbol(elements, symbol));
                 }
+                System.out.println("Thanks for using my element finder!");
             }
         }
 
@@ -47,32 +48,8 @@ public class Main {
 
     }
 
-    private static Element createElement(String[] scrapedData){
-        int atomicNumber = Integer.parseInt(scrapedData[0]);
-        String symbol = scrapedData[1];
-        double atomicMass = Double.parseDouble(scrapedData[2]);
-        String name = scrapedData[3];
-        String type = scrapedData[4];
-        return new Element(atomicNumber, symbol, atomicMass, name, type);
-    }
 
-    private static List<Element> readElementFromCSV(String filename){
-        List<Element> elements = new ArrayList<>();
-        Path pathToFile = Paths.get(filename);
-        try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
 
-            String line = br.readLine();
 
-            while (line != null){
-                String[] attributes = line.split(",");
-                Element element = createElement(attributes);
-                elements.add(element);
-                line = br.readLine();
-            }
-        } catch (IOException ioe){
-            ioe.printStackTrace();
-        }
-        return elements;
-        }
 
 }
