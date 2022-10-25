@@ -32,12 +32,6 @@ public class Element {
                     else if (Character.isUpperCase(molecule.charAt(j)))
                         runLoop = false;
                 }
-//                boolean hasInt = false;
-//                char[] chars = molecule.substring(i, j).toCharArray();
-//                for (char a: chars){
-//                    if (Character.isDigit(a))
-//                        hasInt = true;
-//                }
                 boolean nextChar = true;
                 if (molecule.charAt(i + 1) == '?'){
                     nextChar = false;
@@ -48,6 +42,7 @@ public class Element {
                     int numOfE = 1;
                     molecularMass += e.getAtomicMass() * numOfE;
                 }
+
                 else if (Character.isDigit(molecule.charAt(i + 1)) && nextChar) {
                     Element e = findBySymbol(elements, molecule.substring(i, i + 1));
                     int numOfE = Integer.parseInt(molecule.substring(i + 1, j));
@@ -64,22 +59,17 @@ public class Element {
                     int numOfE = 1;
                     molecularMass += e.getAtomicMass() * numOfE;
                  }
+            }
 
+            else if (c == '(') {
+                StringBuilder segment = new StringBuilder(molecule.substring(i + 1, molecule.indexOf(')')));
+                int numOfE = Integer.parseInt(molecule.substring(molecule.indexOf(')') + 1, molecule.indexOf(')') + 2));
+                String seg = segment.toString();
+                molecule = molecule.replaceFirst("[\\[\\]){}]", "");
+                molecularMass += calculateMolarMass(elements, seg) * numOfE;
+                i += segment.length();
 
             }
-//            if (Character.isDigit(c)) {
-//                int numOfE = Character.getNumericValue(c);
-//                String currentE = "";
-//                if (Character.isUpperCase(molecule.charAt(i - 1))){
-//                    currentE += molecule.charAt(i - 1);
-//                }
-//                else {
-//                    currentE += molecule.substring(i - 2, i);
-//                }
-//                Element e = findBySymbol(elements, currentE);
-//                molecularMass += e.getAtomicMass() * numOfE;
-//
-//            }
         }
          return molecularMass;
     }
