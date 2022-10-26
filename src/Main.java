@@ -1,10 +1,21 @@
+import javax.swing.*;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         List<Element> elements = CSVReader.readElement("/Users/rohansuri/Downloads/periodicdata.csv");
+        FirstGUI f = new FirstGUI();
+        f.setContentPane(f.panelMain);
+        f.setTitle("Test");
+        f.setSize(300, 400);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+
+    public static void molarMass(List<Element> elements){
+        Scanner sc = new Scanner(System.in);
         System.out.println("What do you need help with?\n\t1: Information about an element\n\t2: Molar Mass Calculation ");
         String ans = sc.nextLine();
         boolean keepGoing = true;
@@ -36,12 +47,9 @@ public class Main {
 
         else
             System.out.println("Sorry, wrong answer. Goodbye!");
-
         sc.close();
 
     }
-
-
 
 
 
