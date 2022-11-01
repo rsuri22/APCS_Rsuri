@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        List<Element> elements = CSVReader.readElement("/Users/rohansuri/Downloads/periodicdata.csv");
+//        List<Element> elements = CSVReader.readElement("/Users/rohansuri/Downloads/periodicdata.csv");
         FirstGUI f = new FirstGUI();
         f.setContentPane(f.panelMain);
         f.setTitle("Test");
