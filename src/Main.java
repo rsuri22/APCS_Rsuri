@@ -6,8 +6,6 @@ public class Main {
     public static void main(String[] args) {
         List<Element> elements = CSVReader.readElement("/Users/rohansuri/Downloads/periodicdata2.csv");
         System.out.println("The molecular geometry is: " + Element.structureDetermination(elements, "SF4"));
-
-
     }
 
     public static void molarMass(List<Element> elements){
