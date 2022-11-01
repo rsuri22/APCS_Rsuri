@@ -4,19 +4,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        List<Element> elements = CSVReader.readElement("/Users/rohansuri/Downloads/periodicdata.csv");
-        FirstGUI f = new FirstGUI();
-        f.setContentPane(f.panelMain);
-        f.setTitle("Test");
-        f.setSize(300, 400);
-        f.setVisible(true);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        List<Element> elements = CSVReader.readElement("/Users/rohansuri/Downloads/periodicdata2.csv");
+        chemHelper(elements);
     }
 
-    public static void molarMass(List<Element> elements){
+    public static void chemHelper(List<Element> elements){
         Scanner sc = new Scanner(System.in);
-        System.out.println("What do you need help with?\n\t1: Information about an element\n\t2: Molar Mass Calculation ");
+        System.out.println("What do you need help with?\n\t1: Information about an element\n\t2: Molar Mass Calculation\n\t3: Structure Determination");
         String ans = sc.nextLine();
         boolean keepGoing = true;
         if (ans.equals("1")){
@@ -44,11 +38,32 @@ public class Main {
             }
             System.out.println("Thanks for using my molar mass calculator!");
         }
+        else if (ans.equals("3")) {
+            while (keepGoing) {
+                System.out.println("What molecule would you like to find the structure of? Type STOP to end.");
+                String userInput = sc.nextLine();
+                if (userInput.equals("STOP") || userInput.equals("stop"))
+                    keepGoing = false;
+                else {
+                    System.out.println("Structure: " + Element.structureDetermination(elements, userInput));
+                }
+            }
+            System.out.println("Thanks for using my structure determinator!");
+        }
 
         else
             System.out.println("Sorry, wrong answer. Goodbye!");
         sc.close();
 
+    }
+
+    public static void createGUI(){
+        FirstGUI f = new FirstGUI();
+        f.setContentPane(f.panelMain);
+        f.setTitle("Test");
+        f.setSize(300, 400);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 
