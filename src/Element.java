@@ -109,8 +109,10 @@ public class Element {
 
     public static String structureDetermination(List<Element> elements, String molecule){
         String structure = "";
+        int valenceCount = 0;
         HashMap<Element, Integer> moleculeValues = new HashMap<Element, Integer>();
         molecule += "?";
+
         for (int i = 0; i < molecule.length(); i++){
             char c = molecule.charAt(i);
             if (Character.isUpperCase(c)){
@@ -121,7 +123,7 @@ public class Element {
                     if (j >= molecule.indexOf("?"))
                         runLoop = false;
 
-                    else if (Character.isUpperCase(molecule.charAt(j)))
+                    else if (Character.isUpperCase(molecule.charAt(j)) || molecule.charAt(j) == ' ')
                         runLoop = false;
                 }
                 boolean nextChar = true;
@@ -151,9 +153,16 @@ public class Element {
                     moleculeValues.put(e, numOfE);
                 }
             }
+            else if (c == '-'){
+                valenceCount += Character.getNumericValue(molecule.charAt(i-1));
+            }
+            else if (c == '+'){
+                valenceCount -= Character.getNumericValue(molecule.charAt(i-1));
+            }
+
 
         }
-        int valenceCount = 0;
+
         int numAtoms = 0;
         int numHydrogen = 0;
         Element centerAtom = findBySymbol(elements, "F");
