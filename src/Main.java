@@ -1,6 +1,6 @@
-import javax.swing.*;
 import java.util.List;
 import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -55,15 +55,6 @@ public class Main {
             System.out.println("Sorry, wrong answer. Goodbye!");
         sc.close();
 
-    }
-
-    public static void createGUI(){
-        FirstGUI f = new FirstGUI();
-        f.setContentPane(f.panelMain);
-        f.setTitle("Test");
-        f.setSize(300, 400);
-        f.setVisible(true);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 
