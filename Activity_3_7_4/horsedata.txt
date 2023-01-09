@@ -7,4 +7,3 @@ Major,1495
 Misty,1425
 Buddy,1340
 Autumn,1460
-Spirit,1295

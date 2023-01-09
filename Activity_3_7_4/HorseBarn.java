@@ -1,4 +1,4 @@
-package Activity374;
+package Activity_3_7_4;
 
 /*
  * Activity 3.7.3

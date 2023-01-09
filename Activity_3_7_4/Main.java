@@ -1,4 +1,4 @@
-package Activity374;
+package Activity_3_7_4;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -9,6 +9,7 @@ public class Main {
         ArrayList<Horse> randomHorses = randomizeHorses(h);
         pairHorses(randomHorses);
 //        System.out.println(randomHorses.toString());
+
 
     }
 
