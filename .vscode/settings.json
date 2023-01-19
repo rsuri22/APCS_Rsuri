@@ -1,0 +1,9 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "CSA_377_DataLab_StudentFiles (1)/DataLab_Code/lib/sinbad.jar"
+    ],
+    "java.project.sourcePaths": [
+        "CSA_377_DataLab_StudentFiles (1)/DataLab_Code"
+    ]
+}
