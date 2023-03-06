@@ -24,12 +24,11 @@ public class Student
     return id;
   }
 
-  public boolean isEqual(Student s1){
-    boolean isEqual = false;
-    if (id == s1.getId()){
-      isEqual = true;
+  public boolean equals(Student s1){
+    if (this.id == s1.getId()){
+      return true;
     } 
-    return isEqual;
+    return false;
   }
 
 
