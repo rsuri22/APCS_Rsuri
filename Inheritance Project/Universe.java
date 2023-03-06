@@ -1,0 +1,21 @@
+public class Universe {
+    int size;
+    int distance;
+
+    public Universe(int size, int distance){
+        this.size = size;
+        this.distance = distance;
+    }
+    
+    public int getSize() {
+        return size;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
+
+
+
+}
