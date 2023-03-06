@@ -1,2 +1,2 @@
 # APCS_Rsuri
-This repository is for my AP Computer Science Independent Project. The code, when run, will currently display a functional element identifier, which provides information such as atomic number, symbol, name, melting point, electronegativity, density, and more. In addition, it contains a molar mass calculator, that is functional for any type of compound entered in. Finally, it has structure determination capability, when provided with a molecule that contains one central atom (anywhere up to 7 surrounding atoms), and no free radicals.
+All APCS projects done throughout the year (most of them PLTW unfortunately) are contained in this repository.
