@@ -15,5 +15,13 @@ public class Elliptical extends Galaxy {
     public int getDiameter() {
         return diameter;
     }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setDiameter(int diameter) {
+        this.diameter = diameter;
+    }
     
 }

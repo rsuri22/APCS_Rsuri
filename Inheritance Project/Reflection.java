@@ -9,5 +9,9 @@ public class Reflection extends Nebula {
     public int getScatterCoefficient() {
         return scatterCoefficient;
     }
+
+    public void setScatterCoefficient(int scatterCoefficient) {
+        this.scatterCoefficient = scatterCoefficient;
+    }
     
 }

@@ -9,5 +9,9 @@ public class Irregular extends Galaxy{
     public String[] getInteractions() {
         return interactions;
     }
+
+    public void setInteractions(String[] interactions) {
+        this.interactions = interactions;
+    }
     
 }

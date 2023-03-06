@@ -9,5 +9,9 @@ public class Spiral extends Galaxy{
     public boolean isBarred() {
         return barred;
     }
+
+    public void setBarred(boolean barred) {
+        this.barred = barred;
+    }
     
 }

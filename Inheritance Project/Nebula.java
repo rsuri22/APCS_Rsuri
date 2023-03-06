@@ -17,6 +17,14 @@ public class Nebula extends Universe{
         return color;
     }
 
+    public void setComposition(String composition) {
+        this.composition = composition;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     
 
     

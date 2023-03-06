@@ -9,5 +9,9 @@ public class Dark extends Nebula {
     public String getBlockedObject() {
         return blockedObject;
     }
+
+    public void setBlockedObject(String blockedObject) {
+        this.blockedObject = blockedObject;
+    }
     
 }

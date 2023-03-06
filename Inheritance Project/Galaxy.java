@@ -16,5 +16,13 @@ public class Galaxy extends Universe{
     public int getStarCount() {
         return starCount;
     }
+
+    public void setShape(String shape) {
+        this.shape = shape;
+    }
+
+    public void setStarCount(int starCount) {
+        this.starCount = starCount;
+    }
     
 }

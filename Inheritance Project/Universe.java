@@ -15,6 +15,14 @@ public class Universe {
         return distance;
     }
 
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
+
 
 
 

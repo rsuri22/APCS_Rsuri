@@ -15,5 +15,13 @@ public class Emission extends Nebula {
     public int getUVLevel() {
         return UVLevel;
     }
+
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
+    }
+
+    public void setUVLevel(int uVLevel) {
+        UVLevel = uVLevel;
+    }
     
 }
